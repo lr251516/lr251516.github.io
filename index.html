@@ -63,6 +63,17 @@
     .meta-row{display:flex;align-items:baseline;gap:.875rem;padding:.875rem 1.1rem;background:var(--bg3);border:1px solid var(--border);border-radius:4px}
     .meta-key{font-family:var(--mono);font-size:.65rem;color:var(--green);letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
     .meta-val{font-size:.9rem;color:var(--text-dim);line-height:1.5}
+    .exp-timeline{position:relative;padding-left:32px}
+    .exp-timeline::before{content:'';position:absolute;left:5px;top:0;bottom:0;width:1px;background:var(--border2)}
+    .exp-item{position:relative;padding-bottom:3rem}
+    .exp-item:last-child{padding-bottom:0}
+    .exp-item::before{content:'';position:absolute;left:-32px;top:6px;width:11px;height:11px;border-radius:50%;border:2px solid var(--cyan);background:var(--bg2);z-index:1}
+    .exp-item.current::before{background:var(--cyan);box-shadow:0 0 0 4px rgba(56,189,248,.15)}
+    .exp-company{font-family:var(--mono);font-size:.68rem;color:var(--green);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem}
+    .exp-role{font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:.25rem}
+    .exp-date{font-family:var(--mono);font-size:.7rem;color:var(--text-faint);letter-spacing:.08em;margin-bottom:.65rem}
+    .exp-desc{font-size:.88rem;color:var(--text-dim);line-height:1.75;margin-bottom:.75rem}
+    .exp-tags{display:flex;flex-wrap:wrap;gap:.4rem}
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.25rem}
     .skill-card{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:1.5rem;transition:border-color .2s,transform .2s}
     .skill-card:hover{border-color:var(--border2);transform:translateY(-2px)}
@@ -81,6 +92,7 @@
     .proj-card:hover::after{opacity:1}
     .proj-card.pin::after{opacity:1}
     .proj-card.pin{border-color:rgba(56,189,248,.15)}
+    .sec-alt .proj-card{background:var(--bg3)}
     .proj-top{display:flex;justify-content:space-between;align-items:flex-start}
     .proj-icon{width:32px;height:32px}
     .proj-gh{font-family:var(--mono);font-size:.68rem;color:var(--text-faint);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
@@ -132,6 +144,7 @@
   <div class="nav-logo">lr<em>@</em>sre<em> ~</em></div>
   <ul class="nav-links">
     <li><a href="#about">about</a></li>
+    <li><a href="#experience">experience</a></li>
     <li><a href="#skills">stack</a></li>
     <li><a href="#projects">projects</a></li>
     <li><a href="#certifications">certs</a></li>
@@ -183,10 +196,56 @@
   </div>
 </div>
 
-<div class="sec-alt" id="skills">
+<div class="sec-alt" id="experience">
   <div class="sec-inner">
     <div class="sec-head">
       <span class="sec-num">02</span>
+      <h2 class="sec-title">Experience</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="exp-timeline">
+
+      <div class="exp-item current">
+        <div class="exp-company">Qubika</div>
+        <div class="exp-role">SRE / Cloud Engineer</div>
+        <div class="exp-date">Dec 2025 &mdash; Present</div>
+        <div class="exp-desc">Managing Kubernetes clusters, AWS infrastructure, and CI/CD pipelines. Building reliable, observable systems with Infrastructure as Code &mdash; keeping deployments predictable and platforms teams can ship on.</div>
+        <div class="exp-tags">
+          <span class="tag-green">Kubernetes</span><span class="tag-green">AWS</span>
+          <span class="tag-green">Terraform</span><span class="tag-green">CI/CD</span><span class="tag-green">Observability</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">Qubika</div>
+        <div class="exp-role">Infrastructure Administrator &middot; Cybersecurity</div>
+        <div class="exp-date">Nov 2023 &mdash; Dec 2025</div>
+        <div class="exp-desc">Managed IT infrastructure as part of the Cybersecurity team. Ensured network security, service availability, and protection of company information assets.</div>
+        <div class="exp-tags">
+          <span class="tag-green">Cybersecurity</span><span class="tag-green">Networking</span>
+          <span class="tag-green">IT Infrastructure</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-company">AT Innovando Juntos</div>
+        <div class="exp-role">Technical Support &amp; Networking Specialist</div>
+        <div class="exp-date">Jul 2021 &mdash; Nov 2023</div>
+        <div class="exp-desc">Network administration and advanced technical support alongside a team of security specialists. Managed IT infrastructure for multiple clients, with proactive monitoring and maintenance to ensure performance and security.</div>
+        <div class="exp-tags">
+          <span class="tag-green">Fortinet</span><span class="tag-green">VMware</span>
+          <span class="tag-green">Cisco</span><span class="tag-green">Veeam</span><span class="tag-green">Networking</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="skills">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
       <h2 class="sec-title">Stack</h2>
       <div class="sec-rule"></div>
     </div>
@@ -293,10 +352,10 @@
   </div>
 </div>
 
-<div class="sec" id="projects">
+<div class="sec-alt" id="projects">
   <div class="sec-inner">
     <div class="sec-head">
-      <span class="sec-num">03</span>
+      <span class="sec-num">04</span>
       <h2 class="sec-title">Projects</h2>
       <div class="sec-rule"></div>
     </div>
@@ -340,10 +399,10 @@
   </div>
 </div>
 
-<div class="sec-alt" id="certifications">
+<div class="sec" id="certifications">
   <div class="sec-inner">
     <div class="sec-head">
-      <span class="sec-num">04</span>
+      <span class="sec-num">05</span>
       <h2 class="sec-title">Certifications</h2>
       <div class="sec-rule"></div>
     </div>
@@ -368,10 +427,10 @@
   </div>
 </div>
 
-<div class="sec" id="contact">
+<div class="sec-alt" id="contact">
   <div class="sec-inner">
     <div class="sec-head">
-      <span class="sec-num">05</span>
+      <span class="sec-num">06</span>
       <h2 class="sec-title">Contact</h2>
       <div class="sec-rule"></div>
     </div>
